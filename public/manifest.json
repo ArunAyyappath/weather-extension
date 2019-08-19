@@ -1,25 +1,12 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }	    
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "short_name": "Weather",
+  "manifest_version": 2,
+  "name": "Weather App",
+  "author": "Chrome",
+  "version": "1.0.1",
+  "description": "The Weather Extension is specifically designed to be as simple and intuitive as possible. With just one click you will receive the weather condition of the location.",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["storage"]
 }
