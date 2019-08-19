@@ -2,7 +2,6 @@
   "short_name": "Weather",
   "manifest_version": 2,
   "name": "Weather App",
-  "author": "Chrome",
   "version": "1.0.1",
   "description": "The Weather Extension is specifically designed to be as simple and intuitive as possible. With just one click you will receive the weather condition of the location.",
   "browser_action": {
