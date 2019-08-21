@@ -1,3 +1,3 @@
 ## Weather Extension
 
-The Weather Extension is specifically designed to be as simple and intuitive as possible. With just one click you will receive the weather condition of the location.
+It's now easy to get updated with the weather conditions instantly on your location as well as another location's. Weather app provides detailed weather report & also provides current temperature in Celsius, wind speed, humidity, location coordinates.

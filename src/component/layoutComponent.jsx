@@ -125,7 +125,6 @@ function DesignerComponent(props) {
           secondary={`${dataDecider.lon}`}
         />
       </ListItem>
-      <Divider component="li" />
     </List>
   );
 }
