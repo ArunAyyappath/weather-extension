@@ -1,0 +1,10 @@
+.parent {
+  width: 300px;
+  height: 477px;
+  hyphens: auto;
+  text-align: center;
+  background: #343a40;
+}
+.Design__Description {
+  color: #007bff;
+}
