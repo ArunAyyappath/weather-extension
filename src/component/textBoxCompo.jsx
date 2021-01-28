@@ -30,11 +30,9 @@ const useStyles = makeStyles({
   }
 });
 
-function CircularProgressCompo() {
-  return <CircularProgress disableShrink />;
-}
+const CircularProgressCompo = () => (<CircularProgress disableShrink />);
 
-export default function CustomizedInputSet() {
+const CustomizedInputSet = () => {
   const classes = useStyles();
   let [txt, setTxt] = useState(""),
     [data, setData] = useState([]),
@@ -73,7 +71,7 @@ export default function CustomizedInputSet() {
     }
   }
 
-  function setDataCheck(weatherDetail) {
+  const setDataCheck = (weatherDetail) => {
     if (weatherDetail.cod !== "404") {
       let dataCombined = [
         {
@@ -90,7 +88,11 @@ export default function CustomizedInputSet() {
           lon: weatherDetail.coord.lon,
           lat: weatherDetail.coord.lat,
           windSpeed: weatherDetail.wind.speed,
-          windDeg: weatherDetail.wind.deg
+          windDeg: weatherDetail.wind.deg,
+          ...(weatherDetail.sys && {
+            sunrise: weatherDetail.sys.sunrise ? weatherDetail.sys.sunrise : null,
+            sunset: weatherDetail.sys.sunset ? weatherDetail.sys.sunset : null
+          })
         }
       ];
 
@@ -127,8 +129,10 @@ export default function CustomizedInputSet() {
       ) : error ? (
         <p>City not found ..!</p>
       ) : (
-        <CircularProgressCompo />
-      )}
+            <CircularProgressCompo />
+          )}
     </>
   );
 }
+
+export default CustomizedInputSet;

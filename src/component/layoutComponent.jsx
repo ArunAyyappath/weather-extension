@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import "../css/layout.css";
@@ -6,6 +6,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
+import moment from 'moment';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,10 +32,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function DesignerComponent(props) {
+const DesignerComponent = (props) => {
   const classes = useStyles();
-  //console.log(props.dataSwitch, "from");
-  let dataDecider = props.dataSwitch[0];
+  let [dataDecider] = props.dataSwitch;
+  const sunrise = moment(new Date(dataDecider.sunrise * 1000)).format('MMMM Do YYYY, h:mm:ss a');
+  const sunset = moment(new Date(dataDecider.sunset * 1000)).format('MMMM Do YYYY, h:mm:ss a');
 
   return (
     <List className={classes.root}>
@@ -76,6 +78,29 @@ function DesignerComponent(props) {
           className={classes.design}
           primary="Visibility"
           secondary={`${dataDecider.visibility} km`}
+        />
+      </ListItem>
+
+      <Divider component="li" />
+      <li>
+        <Typography
+          className={classes.dividerFullWidth}
+          color="textSecondary"
+          display="block"
+          variant="caption">
+
+        </Typography>
+      </li>
+      <ListItem>
+        <ListItemText
+          className={classes.design}
+          primary="Sunrise"
+          secondary={`${sunrise}`}
+        />
+        <ListItemText
+          className={classes.design}
+          primary="Sunset"
+          secondary={`${sunset}`}
         />
       </ListItem>
 
@@ -128,10 +153,7 @@ function DesignerComponent(props) {
     </List>
   );
 }
-class LayoutComponent extends Component {
-  render() {
-    return <DesignerComponent dataSwitch={this.props.dataShared} />;
-  }
-}
+
+const LayoutComponent = (props) => (<DesignerComponent dataSwitch={props.dataShared} />)
 
 export default LayoutComponent;

@@ -1,9 +1,12 @@
 .parent {
   width: 300px;
-  height: 490px;
+  height: 600px;
   hyphens: auto;
   text-align: center;
-  background: #343a40;
+  background-position: center;
+  background-size: cover;
+  filter: drop-shadow(2px 4px 6px black);
+  background-image: url("../images/earth2.jpg");
 }
 .Design__Description {
   color: #007bff;
