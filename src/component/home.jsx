@@ -8,7 +8,7 @@ class Home extends Component {
     return (
       <React.Fragment>
         <CssBaseline />
-        <div className={"parent"}>
+        <div className="parent">
           <CustomizedInputSet />
         </div>
       </React.Fragment>
